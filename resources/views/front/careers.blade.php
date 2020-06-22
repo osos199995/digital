@@ -57,53 +57,21 @@
                 </div>
             </div>
             <div class="row">
-
+@foreach($careers as $career)
                 <div class="col-md-4 col-sm-6 careers-item">
                     <div class="card" style="width: 18rem;">
-                        <img src="{{asset('front_assets/img/careers/web.jpg')}}" class="card-img-top" alt="...">
+                        <img style="width: 280x; height: 280px;" src="{{asset('/uploads/images/'.$career->image)}}" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">web Develobment</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="{{route('openpositions')}}" class="btn btn-primary">open Positions</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 col-sm-6 careers-item">
-                    <div class="card" style="width: 18rem; margin-top: 20px;">
-                        <img src="{{asset('front_assets/img/careers/web.jpg')}}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">VR</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="{{route('openpositions')}}" class="btn btn-primary">open Positions</a>
+                            <h5 class="card-title">{{$career->title}}</h5>
+                            <p class="card-text">{!! substr($career->description,strpos($career->description, ' ...'),80)  !!}</p>
+                            <a href="{{route('openpositions',$career->id)}}" class="btn btn-primary">open Positions</a>
                         </div>
                     </div>
                 </div>
 
 
-                <div class="col-md-4 col-sm-6 careers-item">
-                    <div class="card" style="width: 18rem;">
-                        <img src="{{asset('front_assets/img/careers/web.jpg')}}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">3D Modeling</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="{{route('openpositions')}}" class="btn btn-primary">open Positions</a>
-                        </div>
-                    </div>
-                </div>
+   @endforeach
 
-                <div class="col-md-4 col-sm-6 careers-item">
-                    <div class="card" style="width: 18rem;">
-                        <img src="{{asset('front_assets/img/careers/web.jpg')}}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Graphic desigin</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="{{route('openpositions')}}" class="btn btn-primary">open Positions</a>
-                        </div>
-                    </div>
-
-
-                </div>
             </div>
     </section>
 @stop

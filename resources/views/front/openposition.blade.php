@@ -62,29 +62,20 @@
 
 
 
-
+@foreach($jobs as $job)
 
                 <div class="col-md-12 col-sm-6 careers-item">
                     <div class="card">
-                        <h5 class="card-header">senior php developer</h5>
+                        <h5 class="card-header">{{$job->title}}</h5>
                         <div class="card-body">
-                            <h5 class="card-title">We are looking for a Junior Backend PHP Developer  </h5>
-                            <a href="{{route('details')}}"> <button  class="btn btn-primary float-right"> job details </button></a>
+                            <h5 class="card-title">{{$job->quote}}  </h5>
+                            <a href="{{route('details',$job->careers_id)}}"> <button  class="btn btn-primary float-right"> job details </button></a>
                             <!--  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
                         </div>
                     </div>
                 </div>
 
-                <div class="col-md-12 col-sm-6 careers-item">
-                    <div class="card">
-                        <h5 class="card-header">junior php developer</h5>
-                        <div class="card-body">
-                            <h5 class="card-title">We are looking for a senior Backend PHP Developer  </h5>
-                            <a href="{{route('details')}}"> <button  class="btn btn-primary float-right"> job details </button></a>
-                            <!--  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
-                        </div>
-                    </div>
-                </div>
+ @endforeach
 
 
             </div>
