@@ -20,6 +20,7 @@ Route::get('/','CareersController@index')->name('home');
 Route::get('careers','CareersController@Careers')->name('careers');
 Route::get('openpositions/{id}','CareersController@open')->name('openpositions');
 Route::get('details/{id}','CareersController@Details')->name('details');
+Route::post('candidate','CareersController@store')->name('candidate');
 
 Auth::routes();
 

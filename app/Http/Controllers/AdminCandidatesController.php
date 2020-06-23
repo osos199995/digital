@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class AdminCandidatesController extends Controller
 {
-    public function store(Request $request){
+    public function store($id, Request $request){
         $request->validate([
             'first_name'=>'required|string',
             'last_name'=>'required|string',
@@ -30,9 +30,9 @@ class AdminCandidatesController extends Controller
                 'cv'=>$filename,
             ]);
 
-            return redirect()->back();
+            return redirect('/');
         }
-        return redirect()->back();
+         return redirect('/');
     }
 
     public function index(){
