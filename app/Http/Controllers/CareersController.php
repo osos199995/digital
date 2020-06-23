@@ -7,6 +7,7 @@ use App\jobs;
 use App\Candidates;
 use App\Service;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class CareersController extends Controller
 {
@@ -50,9 +51,10 @@ class CareersController extends Controller
                 'position'=>$request->position,
                 'cv'=>$filename,
             ]);
-
+            Session::flash('success',$request->first_name .' congratiulation you applied successfully');
             return redirect()->back();
         }
+       Session::flash('danger',$request->first_name.' opps you application failed');
         return redirect()->back();
     }
 
